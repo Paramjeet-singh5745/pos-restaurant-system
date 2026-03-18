@@ -31,7 +31,7 @@ const Login = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        `http://localhost:5000/api/employees/login/`,
+        `https://pos-restaurant-system.onrender.com/api/employees/login/`,
         formData
       );
 

@@ -20,7 +20,7 @@ const ForgotPasswordEmployee = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:5000/api/employees/forgot-password",
+        "https://pos-restaurant-system.onrender.com/api/employees/forgot-password",
         { email }
       );
       setMessage(res.data.message);

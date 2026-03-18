@@ -47,7 +47,7 @@ const ResetPasswordEmployee = () => {
       setLoading(true);
 
       await axios.post(
-        `http://localhost:5000/api/employees/reset-password-employee/${token}`,
+        `https://pos-restaurant-system.onrender.com/api/employees/reset-password-employee/${token}`,
         { newPassword }
       );
 

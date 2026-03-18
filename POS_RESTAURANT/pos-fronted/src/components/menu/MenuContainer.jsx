@@ -28,7 +28,7 @@ const MenuContainer = () => {
       setLoading(true);
 
       const res = await axios.get(
-        "http://localhost:5000/api/menu/full",
+        "https://pos-restaurant-system.onrender.com/api/menu/full",
         {
           headers: { Authorization: `Bearer ${token}` },
         }

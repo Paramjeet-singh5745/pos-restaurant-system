@@ -30,7 +30,7 @@ useEffect(() => {
       if (!token) return;
 
       const res = await axios.get(
-        "http://localhost:5000/api/payments-all",
+        "https://pos-restaurant-system.onrender.com/api/payments-all",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -51,7 +51,7 @@ useEffect(() => {
       if (!token) return;
 
       const res = await axios.get(
-        `http://localhost:5000/api/payments/${orderId}`,
+        `https://pos-restaurant-system.onrender.com/api/payments/${orderId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

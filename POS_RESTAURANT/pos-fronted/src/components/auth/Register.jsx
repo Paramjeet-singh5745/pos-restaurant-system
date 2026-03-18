@@ -77,7 +77,7 @@ const Register = () => {
       setLoading(true);
 
       await axios.post(
-        `http://localhost:5000/api/employees/register/${restaurantId}`,
+        `https://pos-restaurant-system.onrender.com/api/employees/register/${restaurantId}`,
         {
           name: formData.name,
           email: formData.email,
