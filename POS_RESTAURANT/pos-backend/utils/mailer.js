@@ -92,7 +92,7 @@ const sendEmployeeEmail = async (
                   <table width="100%" cellpadding="0" cellspacing="0" style="margin:25px 0;">
                     <tr>
                       <td align="center">
-                        <a href="http://localhost:5173/employee-login"
+                        <a href="https://pos-restaurant-system.vercel.app/employee-login"
                           style="
                             background:#2563eb;
                             color:#ffffff;
@@ -114,8 +114,8 @@ const sendEmployeeEmail = async (
                   <p style="font-size:13px; color:#6b7280; word-break:break-all;">
                     If the button doesn’t work, use this link:
                     <br/>
-                    <a href="http://localhost:5173/employee-login" style="color:#2563eb;">
-                      http://localhost:5173/employee-login
+                    <a href="https://pos-restaurant-system.vercel.app" style="color:#2563eb;">
+                      https://pos-restaurant-system.vercel.app/employee-login
                     </a>
                   </p>
 

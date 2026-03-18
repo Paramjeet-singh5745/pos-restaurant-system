@@ -182,7 +182,7 @@ exports.forgotPassword = async (email) => {
   });
 
   // Create reset link (frontend route)
-  const resetLink = `http://localhost:5173/reset-password?token=${token}`;
+  const resetLink = `https://pos-restaurant-system.vercel.app/reset-password?token=${token}`;
 
   // Send email
 await sendResetPasswordEmail(email, restaurant_name, resetLink);
@@ -412,7 +412,7 @@ exports.forgotPasswordService = async (email) => {
     expiresIn: RESET_PASSWORD_EXP,
   });
 
-  const resetLink = `http://localhost:5173/reset-password-employee/${token}`;
+  const resetLink = `https://pos-restaurant-system.vercel.app/reset-password-employee/${token}`;
 
   // Send reset email
   await sendResetPasswordEmployee(email, user.full_name, resetLink);

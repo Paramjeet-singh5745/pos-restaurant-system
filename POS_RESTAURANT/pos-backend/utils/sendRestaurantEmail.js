@@ -79,7 +79,7 @@ const sendRestaurantEmail = async (to, restaurantName) => {
                   <table width="100%" cellpadding="0" cellspacing="0" style="margin:25px 0;">
                     <tr>
                       <td align="center">
-                        <a href="http://localhost:5173/"
+                        <a href="https://pos-restaurant-system.vercel.app/"
                           style="
                             background:#2563eb;
                             color:#ffffff;
