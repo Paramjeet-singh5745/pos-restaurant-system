@@ -1,0 +1,497 @@
+Here’s your **complete, industry-level formatted documentation** with **Reset Password**, **Separate Login Flows**, and **Full Authentication Flow** added properly 👇
+
+---
+
+# 🍽️ INDUSTRY LEVEL RESTAURANT POS SYSTEM
+
+## 📘 Complete Project Documentation & Working Flow
+
+---
+
+# 1️⃣ PROJECT OVERVIEW
+
+The **Restaurant POS (Point of Sale) System** is a full-scale restaurant management solution designed to digitize and automate daily restaurant operations.
+
+### ✅ Core Functionalities
+
+* Restaurant Authentication (Separate System Owner Login)
+* Employee Authentication (Role-Based Login)
+* Staff Management
+* Table Management
+* Menu & Category Management
+* Inventory Tracking
+* Order Processing (Real-time)
+* Kitchen Workflow Handling
+* Billing & Payments
+* Password Reset System (NEW)
+
+---
+
+### 🛠️ Technology Stack
+
+* **Backend:** Node.js + Express
+* **Frontend:** React.js
+* **Database:** SQL Server
+* **Architecture:** Modular (Schema-based)
+* **Security:** JWT Authentication + Role-Based Access
+
+---
+
+### 🗂️ Database Schema Structure
+
+* **auth** → Authentication
+* **master** → Core restaurant data
+* **orders** → Orders & Items
+* **kitchen** → Kitchen workflow
+* **billing** → Bills & payments
+
+---
+
+# 2️⃣ AUTHENTICATION SYSTEM (UPDATED 🔥)
+
+## 🔐 A. Restaurant Authentication (Owner/Admin)
+
+### Features:
+
+* Register Restaurant
+* Login to System
+* Reset Password (NEW)
+
+### Tables:
+
+* `auth.Restaurants`
+
+---
+
+## 👥 B. Employee Authentication (Separate Login)
+
+### Features:
+
+* Separate Login Page (Important 🔥)
+* Role-Based Access Control
+* Reset Password (NEW)
+
+### Tables:
+
+* `auth.Users`
+
+---
+
+## 🎭 Roles in System:
+
+* 👑 Admin
+* 🧑‍🍳 Kitchen Staff
+* 🧑‍💼 Cashier
+* 🧑‍🍽️ Waiter
+
+---
+
+# 3️⃣ 🔑 RESET PASSWORD FUNCTIONALITY (NEW)
+
+## 📌 Applies To:
+
+* Restaurant (Owner)
+* Employees (All Roles)
+
+---
+
+## 🔄 Reset Password Flow
+
+### Step 1: Forgot Password
+
+User clicks **"Forgot Password"**
+
+* Enter Email
+* System verifies user
+
+---
+
+### Step 2: Token Generation
+
+* Backend generates **JWT Reset Token**
+* Token has expiry (e.g., 15 minutes)
+
+---
+
+### Step 3: Email Sent
+
+* Reset link sent via email
+
+```
+http://frontend/reset-password/:token
+```
+
+---
+
+### Step 4: Reset Password Page
+
+User:
+
+* Enters new password
+* Confirms password
+
+---
+
+### Step 5: Backend Validation
+
+* Token verified
+* Password hashed (bcrypt)
+* Database updated
+
+---
+
+### Step 6: Success
+
+* User can login with new password
+
+---
+
+## 🔐 Security Features
+
+* Token expiry
+* One-time use token
+* Password hashing
+* Email verification
+
+---
+
+# 4️⃣ ROLE-BASED ACCESS CONTROL
+
+---
+
+## 👑 ADMIN (Restaurant Owner)
+
+### Access:
+
+* Full System Control
+
+### Capabilities:
+
+#### 🏢 Restaurant Management
+
+
+#### 👥 Staff Management
+
+* Add Employees
+* Assign Roles
+* Activate / Deactivate users
+
+#### 🍽️ Table Management
+
+* Add / Edit / Disable tables
+
+#### 📂 Category Management
+
+* Create / Update / Delete categories
+
+#### 🍕 Menu Management
+
+* Add menu items
+* Assign category
+* Set price
+
+#### 📦 Inventory
+
+* Add stock
+* Update stock
+* Track via triggers
+
+#### 📊 Reports
+
+* Daily sales
+* Revenue
+* Orders
+
+---
+
+## 🧑‍🍽️ WAITER
+
+* Select table
+* Add customer
+* Create order
+* Add/remove items
+* Send to kitchen
+
+---
+
+## 🧑‍🍳 KITCHEN STAFF
+
+* View incoming orders
+* Update status:
+
+  * Pending
+  * Preparing
+  * Ready
+
+---
+
+## 💰 CASHIER
+
+* View completed orders
+* Handle payments
+* Generate bills
+
+---
+
+# 5️⃣ COMPLETE SYSTEM FLOW (UPDATED 🔥)
+
+---
+
+## 🟢 STEP 1: Restaurant Login (MAIN ENTRY)
+
+* Restaurant Owner logs in
+* Gets full admin access
+
+---
+
+## 🟢 STEP 2: Initial Setup (ADMIN)
+
+Admin performs:
+
+* Add Categories
+* Add Menu Items
+* Add Tables
+* Add Inventory
+* ✅ Add Employees (IMPORTANT)
+
+---
+
+## 🟢 STEP 3: Employee Creation Flow
+
+Admin:
+
+* Creates employees
+* Assigns roles:
+
+  * Waiter / Kitchen / Cashier
+
+System:
+
+* Stores in `auth.Users`
+
+---
+
+## 🟢 STEP 4: Employee Login (SEPARATE LOGIN PAGE)
+
+🔥 Important Feature:
+
+* Employees login from **different login page**
+
+Example:
+
+* `/login` → Restaurant
+* `/employee/login` → Staff
+
+---
+
+## 🟢 STEP 5: Customer Arrival
+
+Waiter:
+
+* Selects available table
+* Adds customer details
+* Creates order
+
+---
+
+## 🟢 STEP 6: Order Creation
+
+* Add menu items
+* Set quantity
+* Click **Send to Kitchen**
+
+---
+
+## 🟢 STEP 7: Database Operations
+
+* `orders.Orders` → Created
+* `orders.OrderItems` → Stored
+* `kitchen.KitchenOrders` → Created
+
+---
+
+## 🟢 STEP 8: Kitchen Workflow
+
+Kitchen Staff:
+
+* Views order
+* Updates status:
+
+  * Preparing
+  * Ready
+
+---
+
+## 🟢 STEP 9: Order Completion
+
+Waiter:
+
+* Serves food
+* Marks order complete
+
+---
+
+## 🟢 STEP 10: Billing Process
+
+Cashier:
+
+* Opens order
+
+System auto-calculates:
+
+* Subtotal
+* Tax
+* Total
+
+Cashier:
+
+* Selects payment method
+* Confirms payment
+
+---
+
+## 🟢 STEP 11: Database Billing
+
+* `billing.Bills` → Created
+* `billing.Payments` → Created
+
+---
+
+## 🟢 STEP 12: Table Release
+
+* Table marked **Available**
+* Ready for next customer
+
+---
+
+# 6️⃣ DATABASE AUTOMATION (TRIGGERS)
+
+---
+
+## 🔁 Inventory Deduction
+
+* Automatically reduces stock on order
+
+---
+
+## 🔄 Order Status Sync
+
+* Kitchen → Order status updated
+
+---
+
+## 🧾 Bill Auto Creation
+
+* Bill generated on order completion
+
+---
+
+# 7️⃣ DATABASE DESIGN
+
+---
+
+## 📂 auth
+
+* Restaurants
+* Users
+
+## 📂 master
+
+* Categories
+* MenuItems
+* RestaurantTables
+* Inventory
+* Customers
+
+## 📂 orders
+
+* Orders
+* OrderItems
+
+## 📂 kitchen
+
+* KitchenOrders
+
+## 📂 billing
+
+* Bills
+* Payments
+
+---
+
+# 8️⃣ HOW TO OPERATE
+
+---
+
+## 🔹 Admin
+
+1. Login
+2. Setup system
+3. Add employees
+4. Monitor reports
+
+---
+
+## 🔹 Waiter
+
+1. Login
+2. Assign table
+3. Create order
+4. Send to kitchen
+
+---
+
+## 🔹 Kitchen
+
+1. Login
+2. Process orders
+3. Update status
+
+---
+
+## 🔹 Cashier
+
+1. Login
+2. Handle billing
+3. Confirm payments
+
+---
+
+# 9️⃣ KEY FEATURES
+
+✔ Separate Login System (Restaurant + Employee)
+✔ Reset Password for All Users
+✔ Role-Based Authentication
+✔ Real-Time Kitchen Flow
+✔ Automated Billing
+✔ Inventory Tracking
+✔ Table Management
+✔ Clean Architecture
+✔ Scalable Database Design
+
+---
+
+# 🔟 WHY THIS IS INDUSTRY LEVEL
+
+Because it includes:
+
+* 🔐 Secure Authentication (JWT + Reset Password)
+* 👥 Role-Based Access
+* 🧱 Modular Schema Design
+* ⚙️ Database Triggers (Automation)
+* 🔄 Real-time Workflow
+* 🧩 Separation of Concerns
+* 📈 Scalable Structure
+
+---
+
+# 1️⃣1️⃣ FINAL CONCLUSION
+
+The **Restaurant POS System** is a complete enterprise-grade solution that:
+
+* Automates restaurant operations
+* Reduces manual errors
+* Improves efficiency
+* Tracks inventory in real-time
+* Enables smooth coordination between roles
+
