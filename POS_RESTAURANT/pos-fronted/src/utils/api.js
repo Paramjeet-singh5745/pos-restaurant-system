@@ -2,7 +2,7 @@ import axios from "axios";
 import { getEmployeeAuth, getRestaurantAuth, clearAuth } from "./auth";
 
 const api = axios.create({
-  baseURL: "https://pos-restaurant-system.onrender.com",
+  baseURL: "https://pos-restaurant-system.onrender.com/api",
 });
 
 
