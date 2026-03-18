@@ -6,7 +6,7 @@ const authRoutes = require("./modules/restaurant/restaurant.routes");
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://pos-restaurant-system.vercel.app",
   credentials: true
 }));
 

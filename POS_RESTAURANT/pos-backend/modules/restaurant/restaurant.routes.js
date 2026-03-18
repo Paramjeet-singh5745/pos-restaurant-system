@@ -28,7 +28,7 @@ const razorpay = new Razorpay({
    RESTAURANT AUTH
 ===================================================== */
 
-router.post("/register", controller.register);
+  router.post("/register", controller.register);
 router.post("/login", controller.login);
 
 // Forgot password
